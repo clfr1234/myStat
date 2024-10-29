@@ -76,10 +76,12 @@ body {
 
 #waitBtn {
     background-color: #f44336;
+    display: none;
 }
 
 #clickBtn {
     background-color: #388E3C;
+    display: none;
 }
 
 #reStart {
@@ -120,7 +122,7 @@ body {
     text-align: center;
     font-size: 18px;
     border: 2px solid #ddd;
-    max-height: 150px;
+    height: 150px;
     overflow-y: auto;
 }
 
