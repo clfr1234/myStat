@@ -1,0 +1,24 @@
+CREATE TABLE `cps` (
+  `idx` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `cps` double NOT NULL,
+  PRIMARY KEY (`idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `reaction` (
+  `idx` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `record` double NOT NULL,
+  PRIMARY KEY (`idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `typing` (
+  `idx` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `record` double NOT NULL,
+  `max_combo` int NOT NULL,
+  `time_text` varchar(45) NOT NULL,
+  PRIMARY KEY (`idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
