@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reaction</title>
+    <link href="/css/reactionCss.css" rel="stylesheet">
+</head>
+<body>
+<script th:if="${goLead == 'true'}">
+    let goLead = confirm("리더보드로 이동할까요?");
+    if(goLead) {
+        window.location.href = "/reaction/leaderboard";
+    }
+</script>
+<div class="top-buttons">
+    <button id="homeBtn" onclick="window.location.href='/'">HOME</button>
+    <button id="leaderboardBtn" onclick="window.location.href='/reaction/leaderboard'">LEADERBOARD</button>
+</div>
+<div class="container">
+    <div class="button-container">
+        <button type="button" class="buttonStyle" id="startBtn" onclick="start()">START</button>
+        <button type="button" class="buttonStyle" id="waitBtn" onclick="clickIfWait()">WAITING...</button>
+        <button type="button" class="buttonStyle" id="clickBtn">CLICK!!</button>
+        <button type="button" id="reStart" onclick="window.location.reload()">RESTART</button>
+    </div>
+    <div id="result">결과 값</div>
+    <ul id="record"></ul>
+    <button type="button" onclick="checkInput()" id="leadBtn">리더보드 등록하기</button>
+    <div id="formDiv">
+        <form name="leaderboardForm" id="leaderboardForm" method="post" action="/reaction/leaderboard/register">
+            <input type="hidden" id="name" name="name">
+            <input type="hidden" id="record_time" name="record_time">
+        </form>
+    </div>
+</div>
+<script src="/js/reactionScript.js"></script>
+<script src="/js/antiDevTool.js"></script>
+</body>
+</html>

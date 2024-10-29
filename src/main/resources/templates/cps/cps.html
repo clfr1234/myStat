@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/cpsCss.css" rel="stylesheet">
+    <title>Cps</title>
+</head>
+
+<body>
+    <script th:if="${goLead == 'true'}">
+        let goLead = confirm("리더보드로 이동할까요?");
+        if(goLead) {
+            window.location.href = "/cps/leaderboard";
+        }
+    </script>
+    <div id="buttonBox">
+        <button type="button" onclick="window.location.href='/'">홈으로</button>
+        <button type="button" onclick="window.location.href='/cps/leaderboard'">리더보드</button>
+    </div>
+    <h1><div id="countdownBox">CPS 측정</div></h1>
+    <button type="button" id="dBtn" name="dBtn" onclick="cpsStart(this)">시작</button>
+    <button type="button" id="resetBtn" name="resetBtn" onclick="resetf()">다시하기</button>
+    <form action="/cps/leaderboard/register" method="post" name="cpsForm">
+        <input type="hidden" name="name">
+        <input type="hidden" name="cps">
+    </form>
+    <script src="/js/cpsScript.js"></script>
+    <script src="/js/antiDevTool.js"></script>
+</body>
+
+</html>

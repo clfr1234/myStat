@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모음 찾기 게임</title>
+    <link href="/css/sightStyle.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>다른 글자 찾기</h1>
+    <button id="start-btn">게임 시작</button>
+    <div id="game">
+        <p>다른 모음이 들어간 글자를 찾으세요:</p>
+        <div id="letters" class="letters-container"></div>
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <p id="message"></p>
+        <button id="next-btn">다음 단계로 넘어가기</button>
+    </div>
+    <p id="congratulations" style="display: none; color: #4CAF50; font-size: 24px; margin-top: 20px;"></p>
+    <button id="leaderboard-btn" style="display: none; font-size: 20px; background-color: #FFC107;">리더보드 등록</button>
+
+    <button id="restart-game-btn"
+        style="display: none; font-size: 20px; background-color: #FF5722; margin-top: 20px;">다시하기</button>
+
+    <button id="homeBtn" onclick="window.location.href='/'">홈으로</button>
+
+    <script src="/js/sightScript.js"></script>
+    <script src="/js/antiDevTool.js"></script>
+</body>
+
+</html>
