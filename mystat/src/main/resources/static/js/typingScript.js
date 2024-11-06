@@ -246,3 +246,12 @@ $(document).ready(async function () {
         }
     });
 });
+
+function howToPlay(check) {
+    let htpDiv = document.getElementById('howToPlayBg');
+    if(check) {
+        htpDiv.style.display = 'block';
+    } else {
+        htpDiv.style.display = 'none';
+    }
+}

@@ -9,8 +9,6 @@
 </head>
 
 <body>
-
-    <h1>다른 글자 찾기</h1>
     <button id="start-btn">게임 시작</button>
     <div id="game">
         <p>다른 모음이 들어간 글자를 찾으세요:</p>
@@ -25,10 +23,31 @@
     <button id="leaderboard-btn" style="display: none; font-size: 20px; background-color: #FFC107;">리더보드 등록</button>
 
     <button id="restart-game-btn"
-        style="display: none; font-size: 20px; background-color: #FF5722; margin-top: 20px;">다시하기</button>
+        style="width: 180px;
+    height: 50px;
+    background-color: #ff6f61;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    color: white;
+    border: none;
+display: none;">다시하기</button>
+    <div id="buttonBox">
+        <button type="button" id="howToPlayBtn" onclick="howToPlay(true)">플레이 방법</button>
+        <button id="homeBtn" onclick="window.location.href='/'">홈으로</button>
+    </div>
 
-    <button id="homeBtn" onclick="window.location.href='/'">홈으로</button>
-
+    <div id="howToPlayBg">
+        <div id="howToPlayDiv">
+            게임 시작을 누름과 동시에<br>
+            똑같은 단어들 사이에서<br>
+            약간 다른 단어 하나를<br>
+            찾으면 되는 게임
+            <button type="button" id="howToPlayCloseBtn" onclick="howToPlay(false)">닫기</button>
+        </div>
+    </div>
     <script src="/js/sightScript.js"></script>
     <script src="/js/antiDevTool.js"></script>
 </body>

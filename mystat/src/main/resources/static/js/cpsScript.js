@@ -1,6 +1,5 @@
 let clickCount = 0;
 let btn = document.getElementById("dBtn");
-let countdownBox = document.getElementById('countdownBox');
 let countInterval;
 let resultCps;
 let setSecound = 10;
@@ -17,10 +16,8 @@ function increase() {
 }
 
 function countdown(sec) {
-    countdownBox.textContent = sec;
     countInterval = setInterval(() => {
         sec = sec - 1;
-        countdownBox.textContent = sec;
         if(sec == 0) {
             clearInterval(countInterval);
             setResult();
@@ -35,7 +32,7 @@ function resetf() {
 function setResult() {
     btn.disabled = true;
     resultCps = clickCount / setSecound;
-    countdownBox.textContent = `YOUR CPS : ${resultCps}`;
+    btn.textContent = `YOUR CPS : ${resultCps}`;
     setTimeout(() => {
         addLead();
     }, 1000);
@@ -49,5 +46,14 @@ function addLead() {
         frm.name.value = name;
         frm.cps.value = resultCps;
         frm.submit();
+    }
+}
+
+function howToPlay(check) {
+    let htpDiv = document.getElementById('howToPlayBg');
+    if(check) {
+        htpDiv.style.display = 'block';
+    } else {
+        htpDiv.style.display = 'none';
     }
 }

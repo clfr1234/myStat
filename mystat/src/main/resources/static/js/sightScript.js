@@ -156,3 +156,12 @@ function restartGame() {
     gameDiv.style.display = "none";
     progressBar.style.width = '100%';
 }
+
+function howToPlay(check) {
+    let htpDiv = document.getElementById('howToPlayBg');
+    if(check) {
+        htpDiv.style.display = 'block';
+    } else {
+        htpDiv.style.display = 'none';
+    }
+}

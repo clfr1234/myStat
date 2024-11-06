@@ -11,6 +11,16 @@
 </head>
 
 <body>
+    <div id="howToPlayBg">
+        <div id="howToPlayDiv">
+            시작 버튼을 누른 후 ,<br>
+            화면에 나오는 단어를 입력하여 점수를 얻는다.<br>
+            틀리지 않고 계속 맞출 시 콤보가 생기며<br>
+            콤보는 추가 점수를 획득 할 수 있다.<br>
+            5만점을 달성하면 게임은 종료된다.
+            <button type="button" id="howToPlayCloseBtn" onclick="howToPlay(false)">닫기</button>
+        </div>
+    </div>
     <script th:if="${goLead == 'true'}">
         let goLead = confirm("리더보드로 이동할까요?");
         if(goLead) {
@@ -30,8 +40,6 @@
     </header>
 
     <footer>
-        <div class="footerSide" id="fLeft"></div>
-        <div class="footerSide" id="fRight"></div>
         <form id="typingForm">
             <input type="text" placeholder="이곳에 입력하세요." autocomplete="off">
         </form>
@@ -40,8 +48,9 @@
     <div id="blocker"></div> <!-- 시작 전 다른 곳 클릭 막기 -->
     <button type="button" id="startBtn">시작하기</button>
     <div id="move">
-        <a id="home" href="/">홈으로</a>
-        <a id="leader" href="/typing/leaderboard">리더보드</a>
+        <button type="button" id="howToPlayBtn" onclick="howToPlay(true)">플레이 방법</button>
+        <button type="button" id="home" onclick="window.location.href='/'">홈으로</button>
+        <button type="button" id="leader" onclick="window.location.href='/typing/leaderboard'">리더보드</button>
     </div>
 
     <form style="display: none;" name="leadForm" action="/typing/leaderboard/register" method="post">

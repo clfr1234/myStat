@@ -24,7 +24,7 @@ body {
 header {
     width: 100%;
     display: flex;
-    flex: 1;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
@@ -33,6 +33,10 @@ header {
     border-bottom: 4px solid #ffffff; /* 흰색 선 추가 */
     padding-bottom: 20px;
     animation: fadeInDown 1s ease-out;
+}
+
+header > h3 {
+    font-size: 1rem;
 }
 
 @keyframes fadeInDown {

@@ -16,16 +16,24 @@
         }
     </script>
     <div id="buttonBox">
+        <button type="button" id="howToPlayBtn" onclick="howToPlay(true)">플레이 방법</button>
         <button type="button" onclick="window.location.href='/'">홈으로</button>
         <button type="button" onclick="window.location.href='/cps/leaderboard'">리더보드</button>
     </div>
-    <h1><div id="countdownBox">CPS 측정</div></h1>
     <button type="button" id="dBtn" name="dBtn" onclick="cpsStart(this)">시작</button>
     <button type="button" id="resetBtn" name="resetBtn" onclick="resetf()">다시하기</button>
     <form action="/cps/leaderboard/register" method="post" name="cpsForm">
         <input type="hidden" name="name">
         <input type="hidden" name="cps">
     </form>
+
+    <div id="howToPlayBg">
+        <div id="howToPlayDiv">
+            시작 버튼을 누름과 동시에<br>
+            10초 동안 계속 클릭하시면 됩니다.
+            <button type="button" id="howToPlayCloseBtn" onclick="howToPlay(false)">닫기</button>
+        </div>
+    </div>
     <script src="/js/cpsScript.js"></script>
     <script src="/js/antiDevTool.js"></script>
 </body>

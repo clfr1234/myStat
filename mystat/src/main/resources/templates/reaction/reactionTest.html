@@ -13,15 +13,16 @@
     }
 </script>
 <div class="top-buttons">
-    <button id="homeBtn" onclick="window.location.href='/'">HOME</button>
-    <button id="leaderboardBtn" onclick="window.location.href='/reaction/leaderboard'">LEADERBOARD</button>
+    <button type="button" id="howToPlayBtn" onclick="howToPlay(true)">플레이 방법</button>
+    <button type="button" id="homeBtn" onclick="window.location.href='/'">홈으로</button>
+    <button type="button" id="leaderboardBtn" onclick="window.location.href='/reaction/leaderboard'">리더보드</button>
 </div>
 <div class="container">
     <div class="button-container">
-        <button type="button" class="buttonStyle" id="startBtn" onclick="start()">START</button>
-        <button type="button" class="buttonStyle" id="waitBtn" onclick="clickIfWait()">WAITING...</button>
-        <button type="button" class="buttonStyle" id="clickBtn">CLICK!!</button>
-        <button type="button" id="reStart" onclick="window.location.reload()">RESTART</button>
+        <button type="button" class="buttonStyle" id="startBtn" onclick="start()">시작</button>
+        <button type="button" class="buttonStyle" id="waitBtn" onclick="clickIfWait()">대기...</button>
+        <button type="button" class="buttonStyle" id="clickBtn">클릭!!</button>
+        <button type="button" id="reStart" onclick="window.location.reload()">다시하기</button>
     </div>
     <div id="result">결과 값</div>
     <ul id="record"></ul>
@@ -33,6 +34,15 @@
         </form>
     </div>
 </div>
+<div id="howToPlayBg">
+    <div id="howToPlayDiv">
+        시작 버튼을 누른 후 ,<br>
+        초록 버튼으로 바뀔 때 클릭하시면 됩니다.<br>
+        총 5번이 진행됩니다.
+        <button type="button" id="howToPlayCloseBtn" onclick="howToPlay(false)">닫기</button>
+    </div>
+</div>
+
 <script src="/js/reactionScript.js"></script>
 <script src="/js/antiDevTool.js"></script>
 </body>

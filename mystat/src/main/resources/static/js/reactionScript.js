@@ -91,3 +91,12 @@ function checkInput() {
         alert("유효한 이름을 입력해주세요 (최소 2자 이상, 영어 또는 한국어만 허용됩니다).");
     }
 }
+
+function howToPlay(check) {
+    let htpDiv = document.getElementById('howToPlayBg');
+    if(check) {
+        htpDiv.style.display = 'block';
+    } else {
+        htpDiv.style.display = 'none';
+    }
+}
