@@ -16,6 +16,7 @@ let answeredCorrectly = false;
 let gameOverFlag = false;
 let changedValue;
 
+const levelDiv = document.getElementById('levelDiv');
 const startBtn = document.getElementById('start-btn');
 const gameDiv = document.getElementById('game');
 const message = document.getElementById("message");
@@ -105,12 +106,12 @@ function checkAnswer(isCorrect) {
     if (isCorrect) {
         answeredCorrectly = true;
         message.textContent = "정답입니다!";
+        levelDiv.textContent = ``;
 
         if (currentLevel === 4) {
             document.getElementById("congratulations").textContent = "축하합니다! 모든 단계를 완료했습니다!";
             document.getElementById("congratulations").style.display = "block";
             gameDiv.style.display = 'none';
-            document.getElementById("leaderboard-btn").style.display = "block";
             restartGameBtn.style.display = "block";
             nextBtn.style.display = "none";
             return;
@@ -127,6 +128,7 @@ function nextLevel() {
     answeredCorrectly = false;
     nextBtn.style.display = "none";
     createGame(currentLevel);
+    levelDiv.textContent = `${currentLevel+1}단계`;
 }
 
 function gameOver(isTimeUp) {
@@ -141,6 +143,7 @@ function gameOver(isTimeUp) {
         }
     });
     restartGameBtn.style.display = "block";
+    levelDiv.textContent = ``;
     nextBtn.style.display = "none";
 }
 
@@ -150,7 +153,6 @@ function restartGame() {
     gameOverFlag = false;
     message.textContent = "";
     document.getElementById("congratulations").style.display = "none";
-    document.getElementById("leaderboard-btn").style.display = "none";
     restartGameBtn.style.display = "none";
     startBtn.style.display = "block";
     gameDiv.style.display = "none";
