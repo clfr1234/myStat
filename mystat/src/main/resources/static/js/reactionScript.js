@@ -80,16 +80,12 @@ clickBtn.addEventListener('mousedown', function () {
 });
 
 function checkInput() {
-    let inputName = prompt("이름 입력");
-    let regex = /^[ㄱ-ㅎa-zA-Z가-힣\s]{2,}$/;
+    let inputName = prompt("학번 이름 입력\n* 학번과 이름을 정확하게 기재하지 않을 시\n상품 지급이 되지 않을 수 있습니다.\n예)10101 김도제");
+    //let regex = /^[ㄱ-ㅎa-zA-Z가-힣\s]{2,}$/;
     document.getElementById('name').value = inputName;
     let name = document.getElementById('name').value;
-    if(records.length != 0 && regex.test(name)) {
-        document.getElementById("record_time").value = totalTime / records.length;
-        document.forms['leaderboardForm'].submit();
-    } else {
-        alert("유효한 이름을 입력해주세요 (최소 2자 이상, 영어 또는 한국어만 허용됩니다).");
-    }
+    document.getElementById("record_time").value = totalTime / records.length;
+    document.forms['leaderboardForm'].submit();
 }
 
 function howToPlay(check) {

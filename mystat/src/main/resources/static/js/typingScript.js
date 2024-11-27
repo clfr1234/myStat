@@ -228,7 +228,7 @@ $(document).ready(async function () {
             let addLead = confirm("리더보드에 기록을 등록하시겠습니까?");
             if(addLead) {
                 while(true) {
-                    let name = prompt("이름 입력");
+                    let name = prompt("학번 이름 입력\n* 학번과 이름을 정확하게 기재하지 않을 시\n상품 지급이 되지 않을 수 있습니다.\n예)10101 김도제");
 
                     if (name) {
                         let form = document.forms["leadForm"];
