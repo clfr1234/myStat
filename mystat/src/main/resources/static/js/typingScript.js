@@ -239,7 +239,7 @@ $(document).ready(async function () {
                         form.submit();
                         break;
                     } else {
-                        alert("이름을 입력해주세요");
+                        alert("학번과 이름을 입력해주세요");
                     }
                 }
             }
