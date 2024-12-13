@@ -40,8 +40,8 @@ function setResult() {
 
 function addLead() {
     let wantIt = confirm("기록을 리더보드에 등록하시겠습니까?");
-    while(true) {
-        if(wantIt) {
+    if(wantIt) {
+        while(true) {
             let name = prompt("학번 이름 입력\n* 학번과 이름을 정확하게 기재하지 않을 시\n상품 지급이 되지 않을 수 있습니다.\n예)10101 김도제");
             if(name) {
                 let frm = document.forms['cpsForm'];
@@ -53,6 +53,8 @@ function addLead() {
                 alert("학변과 이름을 입력해주세요.");
             }
         }
+    } else {
+        return;
     }
 }
 
